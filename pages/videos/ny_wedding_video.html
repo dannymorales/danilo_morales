@@ -1,0 +1,51 @@
+
+<head>
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+</head>
+
+<div id="lightbox"></div>
+
+<div id="vid">
+	<p>this is a lightbox</p>
+	<h2>X</h2>
+
+</div>
+
+<script>
+	
+	$(document).ready(function  () {
+		$('#vid').click(function  () {
+
+			$(this).stop().delay(100).animate({
+			left: '400px',
+			top: '100px',
+			'width': '640px',
+			'height': '380px',
+
+		}, 1000).css({
+			'border': '1px solid',
+		});
+			$('#lightbox').delay(400).fadeIn('slow');
+			$('#vid h2').fadeIn(300);
+		});
+
+		$('#vid h2').click(function  () {
+			
+			$('#lightbox').fadeOut('slow');
+			$('#vid h2').fadeOut(600);
+			$('#vid').stop().animate({
+				left: '0px',
+				top: '0px',
+				'width': '100px',
+				'height': '60px',
+			}, 1000);
+			return false
+			
+		
+		});
+	});
+	
+		// END OF LIGHTBOX ANIMATION
+</script>
